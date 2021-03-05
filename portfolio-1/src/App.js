@@ -3,20 +3,24 @@ import React from "react"
 import RepetitionExercise from "./components/RepetitionExercise"
 import DurationExercise from "./components/DurationExercise"
 import styles from './components/Style'
+import ExerciseDescription from "./components/ExerciseDescriptions"
+import WorkoutRegime from './components/WorkoutRegime'
 
 const MENU = "menu"
 const DURATION_SCREEN = "duration_screen"
 const REPETITION_SCREEN = "repetition_screen"
+const WORKOUT_SCREEN = "workout_screen"
+const EXERCISE_SCREEN = "exercise_screen"
 
 export default class App extends React.Component {
   constructor(props) {
     super(props)
     let exercise = [
-      { objType: "repetition", name: "Push-Up", value: 0 },
+      { objType: "repetition", name: "Push-Up", value: "0" },
       { objType: "duration", name: "Bicycling", timeValue: "0" },
-      { objType: "repetition", name: "Shoulder-press", value: 0 },
+      { objType: "repetition", name: "Shoulder-press", value: "0" },
       { objType: "duration", name: "Running", timeValue: "0" },
-      { objType: "repetition", name: "Squats", value: 0 },
+      { objType: "repetition", name: "Squats", value: "0" },
     ]
     this.state = {
       currentScreen: MENU,
@@ -55,6 +59,8 @@ export default class App extends React.Component {
                 </li>
               ))}
             </ul>
+            <button onClick = {() => this.setState({currentScreen: WORKOUT_SCREEN})}>Workout Regime</button>
+            <button onClick = {() => this.setState({currentScreen: EXERCISE_SCREEN})}>Exercise Description</button>
           </div>
         break
       case REPETITION_SCREEN:
@@ -79,6 +85,26 @@ export default class App extends React.Component {
                 Back
               </button>
             </div>
+          </div>
+        break
+      case WORKOUT_SCREEN:
+        screen =
+          <div>
+            <WorkoutRegime></WorkoutRegime>
+            <button style={styles.BackButton} onClick={() =>
+                this.setState({ currentScreen: MENU })}>
+                Back
+            </button>
+          </div>
+        break
+      case EXERCISE_SCREEN:
+        screen = 
+          <div>
+            <ExerciseDescription></ExerciseDescription>
+            <button style={styles.BackButton} onClick={() =>
+                  this.setState({ currentScreen: MENU })}>
+                  Back
+            </button>
           </div>
         break
       default:
