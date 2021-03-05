@@ -1,17 +1,6 @@
 import React from "react"
 
-let toDoList = [
-    {
-       id : 1,
-       completed:false, 
-       description: ""
-    },
-    {
-       id : 2,
-       completed:false, 
-       description: ""
-    },
- ]
+let toDoList = []
  
  export default class WorkoutRegime extends React.Component {
     constructor(props) {

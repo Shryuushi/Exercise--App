@@ -10,33 +10,13 @@ export default class ExerciseDescription extends React.Component {
             {objType: "duration", name: "Running", timeValue: "This is a push-up"},
             {objType: "repetition", name: "Squats", value: "This is a push-up"},
         ]
-        this.state = {
-            selectedItem: undefined,
-            currentDescription: description,
-            value : this.props.value 
-        }
-        this.myRef = React.createRef()
+        this.state = {description}
     }
-/*updateValue(newValue) {
-    let propertyName = this.state.selectedItem.objType === "repetition" ? "value" : "timeValue"
-    this.setState((prevState) => {
-      let objectToUpdate = prevState.currentDescription.find((obj) => obj === this.state.selectedItem)
-      objectToUpdate[propertyName] = newValue
-      return { currentDescription: this.state.currentDescription }
-    })
-  }*/
 
-  updateDescription = () => {
-    this.setState(() => {
-        this.props.updateValue(this.props.value)
-        return {
-            value : this.props.value
-        }
-    })
-  }
     render() {
         return (
             <>
+                <h2>{this.props.name}</h2>
                 <p>{this.state.value}</p>
                 <button onClick= {() => this.updateDescription()}>{this.props.name}</button>
             </>
