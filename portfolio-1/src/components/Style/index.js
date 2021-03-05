@@ -1,8 +1,6 @@
 const BodyStyle = {
     backgroundColor: "#2d2e2d",
     color: "white",
-    width: "360px",
-    height: "520px",
     textAlign: "center",
     border: "5px solid #008CBA"
 }
@@ -69,14 +67,8 @@ const Header = {
 }
 
 const Paragraph = {
-    boxSizing: "border-box",
-    width: "270px",
-    height: "200px",
-    padding: "80px",
-    border: "1px solid black",
     margin: "50px",
-    backgroundColor: "white",
-    color: "black",
+    color: "white",
     fontFamily: "Lucida Console",
     fontSize: "14pt",
 }
