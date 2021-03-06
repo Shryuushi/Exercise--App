@@ -17,10 +17,10 @@ export default class RepetitionExercise extends React.Component {
     }
     reset() {
         this.setState((prevState) => {
-            let newValue = prevState.value - prevState.value
-            this.props.updateValue(newValue)
+            let resetValue = prevState.value - prevState.value
+            this.props.updateValue(resetValue)
             return {
-                value: newValue
+                value: resetValue
             }
         })
     }

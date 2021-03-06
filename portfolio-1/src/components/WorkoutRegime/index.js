@@ -7,7 +7,7 @@ let toDoList = []
        super(props)
        let inputRef = React.createRef()
        let filterRef = React.createRef()
-       this.state = {toDoList, curId:toDoList.length+1, inputRef, filterRef, filtered:false}
+       this.state = {toDoList, curId:toDoList.length+1, inputRef, filterRef, filtered:false, value: this.props.value}
     }
     completeItem = (itemId) => {
        this.setState((prevState) => {
@@ -31,6 +31,7 @@ let toDoList = []
           }))
        this.state.inputRef.current.value = ""
     }
+
     render () {
        let toDoList = this.state.toDoList
        if (this.state.filtered) {
