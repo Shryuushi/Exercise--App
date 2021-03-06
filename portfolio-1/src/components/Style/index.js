@@ -72,6 +72,11 @@ const Paragraph = {
     fontFamily: "Lucida Console",
     fontSize: "14pt",
 }
+const Images = {
+    border: "1px solid black",
+    padding: "5px",
+    width: "300px"
+}
 const styles = {
     BodyStyle: BodyStyle,
     ButtonStyle: ButtonStyle,
@@ -80,7 +85,8 @@ const styles = {
     Header: Header,
     BackButton: BackButton,
     Paragraph: Paragraph,
-    BottomBorder: BottomBorder
+    BottomBorder: BottomBorder,
+    Images: Images
 }
 
 export default styles
