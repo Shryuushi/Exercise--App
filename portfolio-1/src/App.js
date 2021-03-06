@@ -42,7 +42,7 @@ export default class App extends React.Component {
       case MENU:
         let exerciseMenu = this.state.currentExercise
         screen =
-          <div style={styles.BodyStyle}>
+          <div style={styles.MenuStyle}>
             <h2 style={styles.Header}>Choose your exercise!</h2>
             <ul style={{ "list-style-type": "none" }}>
               {exerciseMenu.map((obj, index) => (
@@ -59,15 +59,18 @@ export default class App extends React.Component {
                 </li>
               ))}
             </ul>
-            <button onClick = {() => this.setState({currentScreen: WORKOUT_SCREEN})}>Workout Regime</button>
-            <button onClick = {() => this.setState({currentScreen: EXERCISE_SCREEN})}>Exercise Description</button>
+            <div style={{padding:"20px"}}>
+              <button style = {styles.ToDoListButton} onClick = {() => this.setState({currentScreen: WORKOUT_SCREEN})}>Workout Regime</button><br/><br/>
+              <button style={styles.ExerciseDescriptionButton} onClick = {() => this.setState({currentScreen: EXERCISE_SCREEN})}>Exercise Description</button>
+            </div>
+            <br/><br/>
           </div>
         break
       case REPETITION_SCREEN:
         screen =
-          <div style={styles.BodyStyle}>
+          <div style={styles.MenuStyle}>
             <RepetitionExercise {...this.state.selectedItem} updateValue={(value) => this.updateValue(value)}></RepetitionExercise>
-            <div style={styles.BottomBorder}>
+            <div>
               <button style={styles.BackButton} onClick={() =>
                 this.setState({ currentScreen: MENU })}>
                 Back
@@ -77,9 +80,9 @@ export default class App extends React.Component {
         break
       case DURATION_SCREEN:
         screen =
-          <div style={styles.BodyStyle}>
+          <div style={styles.MenuStyle}>
             <DurationExercise {...this.state.selectedItem}></DurationExercise>
-            <div style={styles.BottomBorder}>
+            <div>
               <button style={styles.BackButton} onClick={() =>
                 this.setState({ currentScreen: MENU })}>
                 Back
@@ -89,9 +92,9 @@ export default class App extends React.Component {
         break
       case WORKOUT_SCREEN:
         screen =
-          <div>
+          <div style={styles.ExerciseDescriptionStyle}>
             <WorkoutRegime></WorkoutRegime>
-            <button style={styles.BackButton} onClick={() =>
+            <button style={styles.BackButton2} onClick={() =>
                 this.setState({ currentScreen: MENU })}>
                 Back
             </button>
@@ -99,9 +102,9 @@ export default class App extends React.Component {
         break
       case EXERCISE_SCREEN:
         screen = 
-          <div>
+          <div style={styles.ExerciseDescriptionStyle}>
             <ExerciseDescription></ExerciseDescription>
-            <button style={styles.BackButton} onClick={() =>
+            <button style={styles.BackButton2} onClick={() =>
                   this.setState({ currentScreen: MENU })}>
                   Back
             </button>
