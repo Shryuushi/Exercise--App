@@ -1,8 +1,6 @@
 # Exercise App
 
-# New changes :
-
-Updated Styling on all pages.
+Git Pages Link : https://shryuushi.github.io/Exercise--App/index.html
 
 # 2 New Screens :
 
